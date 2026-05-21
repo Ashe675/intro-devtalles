@@ -12,7 +12,14 @@ partial class Program
         // ShowTime();
         // DaysOfLife();
         // DaysUntilNextBirthday();
-        TypeDifference();
+        // TypeDifference();
+        // HandleNullables();
+        // Operators();
+        // Arreglos();
+        // InventaryManager();
+        // ListDictionary();
+        // DataStructures();
+        Generics();
     }
 
 }
