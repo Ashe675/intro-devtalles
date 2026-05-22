@@ -6,10 +6,10 @@ partial class Program
         string[] names = { "Alice", "Bob", "Charlie" };
         int[] numbers = { 1, 2, 3 };
 
-        // Console.WriteLine($"Longitud del arreglo de nombres: {GetStringLength(names)}");
-        // Console.WriteLine($"Longitud del arreglo de números: {GetIntArrayLength(numbers)}");
-        Console.WriteLine($"Longitud del arreglo de nombres: {GetArrayLength(names)}");
-        Console.WriteLine($"Longitud del arreglo de números: {GetArrayLength(numbers)}");
+        // WriteLine($"Longitud del arreglo de nombres: {GetStringLength(names)}");
+        // WriteLine($"Longitud del arreglo de números: {GetIntArrayLength(numbers)}");
+        WriteLine($"Longitud del arreglo de nombres: {GetArrayLength(names)}");
+        WriteLine($"Longitud del arreglo de números: {GetArrayLength(numbers)}");
 
         Box<string> stringBox = new() { Content = "Hola, mundo!" };
 
@@ -40,6 +40,6 @@ class Box<T>
     public T? Content { get; set; }
     public void ShowContent()
     {
-        Console.WriteLine($"El contenido de la caja es: {Content}");
+        WriteLine($"El contenido de la caja es: {Content}");
     }
 }
