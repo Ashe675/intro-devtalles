@@ -5,6 +5,7 @@
     <TargetFramework>net10.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
+    <BaseOutputPath>C:\dev\dotnet-out\HelloApp\bin\</BaseOutputPath>
   </PropertyGroup>
 
   <ItemGroup Label="Simplificar el uso de la consola">

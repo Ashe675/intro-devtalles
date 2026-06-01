@@ -34,7 +34,20 @@ partial class Program
         // Functions();
         // FactorialTable();
         //  Tuples();
-        AnounymousFunctions();
+        // AnounymousFunctions();
+        #endregion
+
+        #region Seccion 4
+        // TestingClass();
+        // Properties();
+        // Methods();
+        // * FORZANDO LA RECOLLECION DE BASURA
+        // GC.Collect();
+        // * EJECUTAR FINALIZADORES
+        // GC.WaitForPendingFinalizers();
+        // ProductSalesDemo();
+        // BusFleet();
+        Inheritance();
         #endregion
     }
 
