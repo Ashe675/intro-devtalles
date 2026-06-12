@@ -47,7 +47,12 @@ partial class Program
         // GC.WaitForPendingFinalizers();
         // ProductSalesDemo();
         // BusFleet();
-        Inheritance();
+        // Inheritance();
+        // AbstractClassExamples();
+        // HomeWork6();
+        // HandleExcepcions();
+        // Collections();
+        Linq();
         #endregion
     }
 
