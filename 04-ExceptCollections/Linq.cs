@@ -45,8 +45,8 @@ partial class Program
         }
 
         var avengersCharactersQuery = from character in characters
-                                       where character.Team == "Avengers"
-                                       select $"{character.Name} - {character.Alias}";
+                                      where character.Team == "Avengers"
+                                      select $"{character.Name} - {character.Alias}";
         WriteLine("Personajes de los Avengers:");
         foreach (var item in avengersCharactersQuery)
         {
@@ -67,6 +67,40 @@ partial class Program
         {
             WriteLine(item);
         }
+
+        var sortedQuery = from c in characters
+                          orderby c.Name
+                          select $"{c.Name} - {c.Alias}";
+        var sortedMethod = characters.OrderByDescending(x => x.Name);
+
+        WriteLine("Personajes ordenados por nombre de manera ascendente (query):");
+        foreach (var item in sortedQuery)
+        {
+            WriteLine(item);
+        }
+
+        WriteLine("Personajes ordenados por nombre de manera descendente (method):");
+        foreach (var item in sortedMethod)
+        {
+            WriteLine($"{item.Name} - {item.Alias}");
+        }
+
+        var firstThreeQuery = (from c in characters select c.Name).Take(3);
+        WriteLine("Los tres primeros personajes (query):");
+        foreach (var item in firstThreeQuery)
+        {
+            WriteLine(item);
+        }
+
+        var firstThreeMethod = characters.Take(3);
+        WriteLine("Los tres primeros personajes (method):");
+        foreach (var item in firstThreeMethod)
+        {
+            WriteLine($"{item.Name} - {item.Alias}");
+        }
+
+
+
     }
 
     class MarvelCharacter

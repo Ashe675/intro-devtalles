@@ -52,7 +52,8 @@ partial class Program
         // HomeWork6();
         // HandleExcepcions();
         // Collections();
-        Linq();
+        // Linq();
+        AdvancedLinq.Program.AdvancedLINQ();
         #endregion
     }
 
