@@ -53,7 +53,13 @@ partial class Program
         // HandleExcepcions();
         // Collections();
         // Linq();
-        AdvancedLinq.Program.AdvancedLINQ();
+        // AdvancedLinq.Program.AdvancedLINQ();
+        // SalesAnalysis();
+        // FileExample();
+        // DirectoryExample();
+        // PathExample();
+        WriteFileExample();
+        
         #endregion
     }
 

@@ -1,0 +1,6 @@
+Podemos escribir en un archivo
+La hora atras es: 16:04:11
+Podemos escribir en un archivo
+La hora atras es: 16:05:58
+Podemos escribir en un archivo
+La hora atras es: 16:06:28
