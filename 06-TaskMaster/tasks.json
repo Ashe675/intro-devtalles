@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "3f6c921",
+    "Description": "Estudiar C#",
+    "Completed": true,
+    "CreatedAt": "2025-03-11T13:20:53.051415-06:00",
+    "ModifiedAt": "2026-06-19T14:25:03.7245735-06:00",
+    "Deleted": false
+  },
+  {
+    "Id": "22ed8ff",
+    "Description": "Jugar pelota en el estadio",
+    "Completed": false,
+    "CreatedAt": "2026-06-19T13:36:30.6523289-06:00",
+    "ModifiedAt": "2026-06-19T14:25:29.0719018-06:00",
+    "Deleted": false
+  }
+]

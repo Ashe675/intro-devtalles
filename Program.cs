@@ -58,8 +58,10 @@ partial class Program
         // FileExample();
         // DirectoryExample();
         // PathExample();
-        WriteFileExample();
-        
+        // WriteFileExample();
+        // ManageJsonFile.Program.ManageJsonFile();
+        TaskMaster.Program.TaskMaster();
+
         #endregion
     }
 
