@@ -145,6 +145,110 @@ namespace TaskMaster
                 return [];
             }
         }
+
+        public void TasksByState()
+        {
+            try
+            {
+                ResetColor();
+                Clear();
+                WriteLine("---------Tareas por estado--------");
+                ListTasks();
+                WriteLine("---------------------------------");
+                WriteLine("1. Completadas");
+                WriteLine("2. Pendientes");
+                Write("Ingrese la opcion por la cual desea filtrar: ");
+                var state = ReadLine();
+                if (state != "1" && state != "2")
+                {
+                    ForegroundColor = ConsoleColor.Red;
+                    WriteLine($"{state} - No es una opcion valida");
+                    ResetColor();
+                    return;
+                }
+
+                var completed = state == "1";
+
+                List<Task> filteredTasks = Tasks.Where(task => task.Completed == completed).ToList();
+                if (filteredTasks.Count() == 0)
+                {
+                    ForegroundColor = ConsoleColor.Yellow;
+                    WriteLine("No se encontraron tareas con el estado solicitado");
+                    ResetColor();
+                    return;
+                }
+                ForegroundColor = completed ? ConsoleColor.Green : ConsoleColor.DarkYellow;
+
+                WriteLine($"---------Tareas {(completed ? "Completadas" : "Pendientes")}---------");
+                Table table = new Table("Id", "Descripcion", "Completado");
+                foreach (var task in filteredTasks)
+                {
+                    table.AddRow(task.Id, task.Description, task.Completed ? "✅" : "[]");
+                }
+
+                table.Config = TableConfig.Unicode();
+
+                Write(table.ToString());
+                return;
+            }
+            catch (Exception ex)
+            {
+                ForegroundColor = ConsoleColor.Red;
+                WriteLine($"Ocurrio un error al filtrar las tareas: {ex.Message}");
+                return;
+            }
+        }
+
+
+        public void TasksByDescription()
+        {
+            try
+            {
+                ResetColor();
+                Clear();
+                WriteLine("---------Buscar tareas por descripcion--------");
+                ListTasks();
+                WriteLine("---------------------------------");
+                Write("Ingrese la descripcion que desea filtrar: ");
+                var description = ReadLine();
+                if (string.IsNullOrEmpty(description))
+                {
+                    ForegroundColor = ConsoleColor.Red;
+                    WriteLine("Descripcion invalida");
+                    ResetColor();
+                    return;
+                }
+                List<Task> filteredTasks = Tasks.FindAll(task => task.Description?.Contains(description, StringComparison.OrdinalIgnoreCase) ?? false);
+
+                if (filteredTasks.Count() == 0)
+                {
+                    ForegroundColor = ConsoleColor.Yellow;
+                    WriteLine("No se encontraron tareas con el estado solicitado");
+                    ResetColor();
+                    return;
+                }
+
+                WriteLine($"---------Tareas encontradas---------");
+                Table table = new Table("Id", "Descripcion", "Completado");
+                foreach (var task in filteredTasks)
+                {
+                    table.AddRow(task.Id, task.Description, task.Completed ? "✅" : "[]");
+                }
+
+                table.Config = TableConfig.Unicode();
+
+                Write(table.ToString());
+                return;
+
+            }
+            catch (Exception ex)
+            {
+                ForegroundColor = ConsoleColor.Red;
+                WriteLine($"Ocurrio un error al buscar tareas por descripcion: {ex.Message}");
+                ResetColor();
+                return;
+            }
+        }
     }
 
 }
